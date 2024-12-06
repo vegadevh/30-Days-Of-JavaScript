@@ -1,10 +1,10 @@
 // Declare firstName, lastName, country, city, age, isMarried, year variable and assign value to it and use the typeof operator to check different data types.
 
-let name = 'Diego';
-let lastname = 'Vega';
+export let name = 'Diego';
+export let lastname = 'Vega';
 let country = 'El Salvador';
 let city = 'Santa Tecla';
-let age = 27;
+export let age = 27;
 let isMarried = false;
 let year = 2024;
 
