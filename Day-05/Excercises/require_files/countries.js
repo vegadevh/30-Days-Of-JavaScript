@@ -9,5 +9,6 @@ export const countries = [
     'Hungary',
     'Ireland',
     'Japan',
-    'Kenya'
+    'Kenya',
+    'El Salvador',
 ];
