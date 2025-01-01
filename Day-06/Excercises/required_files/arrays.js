@@ -9,7 +9,9 @@ export const countries = [
     'Hungary',
     'Ireland',
     'Japan',
-    'Kenya'
+    'Kenya',
+    'Cuba',
+    'El Salvador',
 ];
 
 export const webTechs = [
