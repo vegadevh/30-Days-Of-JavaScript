@@ -55,15 +55,36 @@ Generates a random floating-point number between 0 (inclusive) and 1 (exclusive)
 Is used to round down the random number to the nearest whole number. This ensures that the result is an integer within the desired range.
 ### toString(16)
 
- method converts the integer to a hexadecimal string.
+Method converts the integer to a hexadecimal string.
 ### Formatting the Result
 
 The function returns a template string that starts with `#` followed by the hexadecimal string. This forms a valid hexadecimal color code.
 
 The function ensures that each time it is called, it generates a unique and valid hexadecimal color code, which can be used in web development for styling elements with random colors.
 
+### String.prototype.padStart()
+
+The padStart() method of String values pads this string with another string (multiple times, if needed) until the resulting string reaches the given length. The padding is applied from the start of this string.
+
+```
+const str1 = '5';
+
+console.log(str1.padStart(2, '0'));
+// Expected output: "05"
+
+const fullNumber = '2034399002125581';
+const last4Digits = fullNumber.slice(-4);
+const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
+
+console.log(maskedNumber);
+// Expected output: "************5581"
+```
+
 > ### Reference:  
 > - **Array.prototype.reduce()**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
 > - **Array.prototype.map()**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
 > - **Array.prototype.filter()**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+> - **How to convert RGB to HEX**: https://www.youtube.com/shorts/a_bn24Qjdok
+> - **String.prototype.padStart()**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+> - **Set in JavaScript**: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/size
 
