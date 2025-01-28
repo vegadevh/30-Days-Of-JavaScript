@@ -1,4 +1,4 @@
-import { countries } from '../../Day-06/Excercises/required_files/arrays.js';
+import { countries } from '../../Day-06/Exercises/required_files/arrays.js';
 // Linear equation is calculated as follows: ax + by + c = 0. Write a function which calculates value of a linear equation, solveLinEquation.
 const solveLinEquation = (a, b, c, x, y) => {
     if (x === 'x') {
