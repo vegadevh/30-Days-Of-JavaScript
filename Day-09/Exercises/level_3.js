@@ -85,7 +85,7 @@ console.log(mostSpokenLanguages([...countries], 3));
 
 const mostPopulatedCountries = (countriesArray, numberOfCountries) => {
     const countPopulation = [];
-    countries.map(country => {
+    countriesArray.map(country => {
         countPopulation.push({ 'country': country.name, 'population': country.population });
     });
     countPopulation.sort((a, b) => b.population - a.population);
