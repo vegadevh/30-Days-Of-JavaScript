@@ -1,6 +1,23 @@
 import { countries } from "../required_files/data.js";
 // Ejercicios del mismo nivel:
 // Contar los idiomas únicos en la lista de países
+const uniqueLanguages = () => {
+    const languages = [];
+    countries.map(country => {
+        const countryLanguages = country.languages;
+        countryLanguages.forEach(language => {
+            const langObj = languages.find(lang => lang.language === language);
+            if (!langObj) {
+                languages.push({ language });
+            }
+        })
+    })
+    return languages;
+}
+
+console.log(uniqueLanguages());
+
+// Crea una función que devuelva un objeto donde las claves sean los idiomas hablados en los países y los valores sean el número de veces que aparecen en la lista.
 const countDifferentLanguages = (countriesArray, numberOfLanguagesToShow) => {
     let differentLanguages = [];
     countriesArray.map(country => {
@@ -19,19 +36,44 @@ const countDifferentLanguages = (countriesArray, numberOfLanguagesToShow) => {
 }
 
 console.log(countDifferentLanguages([...countries], 3));
-
-// Crea una función que devuelva un objeto donde las claves sean los idiomas hablados en los países y los valores sean el número de veces que aparecen en la lista.
 // Contar las monedas únicas en la lista de países
-
+const uniqueCurrencies = (countriesArray, numberOfCurrenciesToShow) => {
+    let differentCurrencies = [];
+    countriesArray.map(country => {
+        const currencyObj = differentCurrencies.find(currency => currency.currency.toLowerCase() === country.currency.toLowerCase());
+        if (!currencyObj) {
+            differentCurrencies.push({ 'currency': country.currency })
+        }
+    })
+    return differentCurrencies;
+}
+console.log(uniqueCurrencies([...countries], 10));
 // Crea una función que devuelva un objeto donde las claves sean las monedas utilizadas en los países y los valores sean el número de países que usan esa moneda.
-// Ejercicios de mayor dificultad:
-// Agrupar países por continente
+const currencyAndHowManyCountriesUseIt = (countriesArray) => {
+    let currencies = [];
+    countriesArray.map(country => {
+        const currencyObj = currencies.find(curr => curr.currency.toLowerCase() === country.currency.toLowerCase());
+        if (currencyObj) {
+            currencyObj.countriesInUsed++;
+        } else {
+            currencies.push({ 'currency': country.currency, 'countriesInUsed': 1 })
+        }
+    })
+    currencies.sort((a, b) => b.countriesInUsed - a.countriesInUsed);
+    return currencies;
+}
+console.log(currencyAndHowManyCountriesUseIt([...countries]));
 
-// Suponiendo que cada país tiene una propiedad continent, crea una función que devuelva un objeto donde las claves sean los continentes y los valores sean arrays con los nombres de los países de cada continente.
-// Encontrar el país con más idiomas oficiales
+// Ejercicios de mayor dificultad:
 
 // Crea una función que devuelva el país con la mayor cantidad de idiomas oficiales en la lista.
-// País con la población más densa
+const countryWithMoreLanguages = (countriesArray) => {
+    let countries = []
+    countriesArray.map(country => {
+        countries.push({ 'country': country.name, 'spoken_languages': country.languages.length });
+    });
+    countries.sort((a, b) => b.spoken_languages - a.spoken_languages);
+    return countries;
+}
 
-// Agrega una propiedad area a cada país y crea una función que devuelva el país con mayor densidad de población(población / área).
-// Estos ejercicios te ayudarán a mejorar tu manejo de métodos como reduce(), map(), filter(), sort(), y estructuras de datos en JavaScript. ¡Avísame si quieres ayuda con alguno! 
+console.log(countryWithMoreLanguages([...countries]));
